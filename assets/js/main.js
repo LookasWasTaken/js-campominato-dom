@@ -1,18 +1,25 @@
-/* Consegna
-L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
-Ogni cella ha un numero progressivo, da 1 a 100.
-Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
+/* Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.
+nella stessa cella può essere posizionata al massimo una bomba, perciò nell’array delle bombe non potranno esserci due numeri uguali.
+In seguito l'utente clicca su una cella:
+se il numero è presente nella lista dei numeri generati
+abbiamo calpestato una bomba
+la cella si colora di rosso e la partita termina.
+Altrimenti
+la cella cliccata si colora di azzurro
+l'utente può continuare a cliccare sulle altre celle.
+La partita termina quando il giocatore clicca su una bomba o quando raggiunge il numero massimo possibile di numeri consentiti (ovvero quando ha rivelato tutte le celle che non sono bombe).
+Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha cliccato su una cella che non era una bomba.
  */
-
-/* Bonus
-Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
-con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe; // quindi * 10
-con difficoltà 2 => 81 caselle, con un numero compreso tra 1 e 81, divise in 9 caselle per 9 righe; // quindi * 9
-con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 caselle per 7 righe; */ // quindi * 7
 
 // Seleziono la select
 const select = document.getElementById("mode_selected");
+
+// Genero una variabile per lo score
+let score = 0;
+
+// Seleziono l'h3 del risultato
+
+const scoreBoard = document.getElementById("score")
 
 // Seleziono il bottone Play da dove dovrà partire un eventListener che genererà una griglia quadrata
 
@@ -25,6 +32,7 @@ play.addEventListener("click", function () {
   let getValue = select.selectedOptions[0].value;
   console.log("Ho premuto Play in modalità:", getValue);
   displayGrid(getValue);
+  scoreBoard.innerHTML = `your current score is: `
 });
 
 // Seleziono il bottone Reset
@@ -115,6 +123,9 @@ function createCell(cellNumber) {
     cell.addEventListener("click", function () {
       cell.classList.add("bg");
       console.log("Numero Selezionato", cell.innerText);
+      score++;
+      scoreBoard.innerHTML = `your current score is: ${score}`
+      console.log(score, "Score Attuale");
     });
     cell.innerHTML = i.toString();
     gridEl.appendChild(cell);
