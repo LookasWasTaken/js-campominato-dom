@@ -30,6 +30,7 @@ const result = document.getElementById("result");
 let bombsArray = [];
 
 // Genero una variabile per controllare se una bomba è stata trovata
+
 let bombFound = false;
 
 // Seleziono il bottone Play da dove dovrà partire un eventListener che genererà una griglia quadrata
@@ -43,13 +44,13 @@ play.addEventListener("click", function () {
   let getValue = select.selectedOptions[0].value;
   console.log("Ho premuto Play in modalità:", getValue);
   displayGrid(getValue);
-  scoreBoard.innerHTML = `your current score is <span></span>`;
+  score = 0
   // Seleziono la length di tutte le .cell
   const numberCells = document.querySelectorAll(".cell").length;
   console.log(numberCells, "celle generate");
   // Svuoto l'array nel caso stessi ripremendo play
   bombsArray = [];
-  // Al richiamo della funzione, si sostiuisce il return (cit. Fox90)
+  // Al richiamo della funzione, si sostiuisce il return (cit. Mattia Volpe)
   // Richiamo la funzione di generazione delle bombe per riempire l'array vuoto delle bombe
   bombsArray = createBombs(numberCells);
   // il console.log dell'array delle bombe, se fosse visibile, darebbe degli aiuti ai giocatori
