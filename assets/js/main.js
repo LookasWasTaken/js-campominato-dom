@@ -160,7 +160,7 @@ function createCell(cellNumber) {
         score++;
         scoreBoard.innerHTML = `your current score is <span>${score}</span>`;
         console.log(score, "Score Attuale");
-        if (score == cellNumber - 99) {
+        if (score == cellNumber - 16) {
           result.innerText = "YOU WIN!";
           result.classList.add("win");
         }
