@@ -19,7 +19,7 @@ let score = 0;
 
 // Seleziono l'h3 dello score
 
-const scoreBoard = document.getElementById("score");
+let scoreBoard = document.getElementById("score");
 
 // Seleziono l'h3 del risultato
 
@@ -67,6 +67,8 @@ const reset = document.querySelector(".reset");
 
 reset.addEventListener("click", function () {
   defaultOption();
+  scoreBoard.innerHTML = "";
+  result.innerText = "";
 });
 
 // Selezione il bottone di Refresh
