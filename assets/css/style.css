@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+:root {
+    --font-lato: 'Lato', sans-serif;
+    --font-game: 'Odibee Sans', cursive;
+    --font-arcade: 'Press Start 2P', cursive;
+    --green-boolean: #00e165;
+    --blue-boolean: #001533;
+}
+
+h1 {
+    font-family: var(--font-game);
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg,
+            #001533 0%,
+            #00e165 50%,
+            #001533 100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+}
+
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.play, .reset {
+    width: 85px;
+    height: 40px;
+    border-radius: 35px;
+    padding: 0 0.5rem;
+    transition: all 0.5s;
+    border-color: var(--blue-boolean);
+    font-size: 1.2rem;
+    font-family: var(--font-game);
+}
+
+.reset{
+    color: white;
+    background-color: var(--blue-boolean);
+}
+
+.play:active {
+    scale: 1.2;
+}
+
+.reset:active {
+    scale: 1.2;
+}
+
+.reset:hover .fa-rotate-right {
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+label i,
+.color_boolean {
+    color: var(--blue-boolean);
+}
+
+.img-fluid {
+    vertical-align: middle;
+}
+
+select {
+    width: 150px;
+    height: 40px;
+    font-size: 1.2rem;
+    border-radius: 25px;
+    padding: 0 15px;
+    border: 2px solid var(--blue-boolean);
+}
+
+option {
+    height: 30px;
+}
+
+option:hover{
+    background-color: var(--blue-boolean) !important;
+}
+
+select,
+option {
+    font-family: var(--font-game);
+}
+
+select:hover,
+option:hover,
+i:hover {
+    cursor: pointer;
+}
+
+#app_main {
+    background-color: var(--green-boolean);
+    box-shadow: 0 0 5px 0 inset black;
+}
+
+.shadow{
+    box-shadow: 0 0 5px 0 inset black;
+    border-radius: 25px;
+}
+
+h2{
+    font-family: var(--font-game);
+    text-transform: uppercase;
+    letter-spacing: 0.8rem;
+    color: var(--blue-boolean);
+}
+
+.easy{
+    width: calc(100% / 10);
+}
+
+.medium{
+    width: calc(100% / 9);
+}
+
+.hard{
+    width: calc(100% / 7);
+}
+
+.cell{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--green-boolean) 1px solid;
+    aspect-ratio: 1/1;
+    font-family: var(--font-arcade);
+    color: white;
+    background-color: var(--blue-boolean);
+    box-shadow: inset 0 0 7px 0 black;
+    transition: all 0.5s;
+}
+
+.cell:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.cell:active{
+    scale: 0.8;
+}
+
+.bg {
+    background-color: #00a44a;
+    color: black;
+    text-decoration: underline;
+    transition: all 0.5s;
+}
+
+.bg:hover{
+    background-color: aqua;
+}
+
+
+.lookas {
+    text-decoration: none;
+    color: var(--blue-boolean);
+    transition: all 0.5s;
+}
+
+.lookas:hover {
+    scale: 1.1;
+    color: var(--green-boolean);
+}
