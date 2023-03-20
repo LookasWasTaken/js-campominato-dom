@@ -40,7 +40,8 @@ h1 {
     }
 }
 
-.play, .reset {
+.play,
+.reset {
     width: 85px;
     height: 40px;
     border-radius: 35px;
@@ -51,7 +52,7 @@ h1 {
     font-family: var(--font-game);
 }
 
-.reset{
+.reset {
     color: white;
     background-color: var(--blue-boolean);
 }
@@ -101,7 +102,7 @@ option {
     height: 30px;
 }
 
-option:hover{
+option:hover {
     background-color: var(--blue-boolean) !important;
 }
 
@@ -121,31 +122,75 @@ i:hover {
     box-shadow: 0 0 5px 0 inset black;
 }
 
-.shadow{
+#score,
+#result {
+    text-align: center;
+    margin: 3rem 0;
+    font-family: var(--font-arcade);
+    font-size: 1.2rem;
+    transition: all 0.5s;
+    -webkit-text-stroke: 1px var(--blue-boolean);
+}
+
+#score span{
+    color: white;
+    background-color: var(--blue-boolean);
+    padding: 0.7rem;
+    aspect-ratio: 1/1;
+    text-align: center;
+}
+
+.win{
+    color: #00e165;
+    -webkit-text-stroke: 1px var(--blue-boolean);
+}
+
+.lost{
+    color: red;
+    -webkit-text-stroke: 1px var(--blue-boolean);
+}
+
+.tilt {
+    animation: tilt 0.8s ease-in-out infinite;
+}
+
+@keyframes tilt {
+    0% {
+        transform: scale(1, 1);
+      }
+      50% {
+        transform: scale(1.5, 1.5);
+      }
+      100% {
+        transform: scale(1, 1);
+      }
+}
+
+.shadow {
     box-shadow: 0 0 5px 0 inset black;
     border-radius: 25px;
 }
 
-h2{
+h2 {
     font-family: var(--font-game);
     text-transform: uppercase;
     letter-spacing: 0.8rem;
     color: var(--blue-boolean);
 }
 
-.easy{
+.easy {
     width: calc(100% / 10);
 }
 
-.medium{
+.medium {
     width: calc(100% / 9);
 }
 
-.hard{
+.hard {
     width: calc(100% / 7);
 }
 
-.cell{
+.cell {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -158,12 +203,12 @@ h2{
     transition: all 0.5s;
 }
 
-.cell:hover{
+.cell:hover {
     opacity: 0.7;
     cursor: pointer;
 }
 
-.cell:active{
+.cell:active {
     scale: 0.8;
 }
 
@@ -174,7 +219,7 @@ h2{
     transition: all 0.5s;
 }
 
-.bg:hover{
+.bg:hover {
     background-color: aqua;
 }
 
