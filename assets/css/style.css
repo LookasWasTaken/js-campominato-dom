@@ -129,7 +129,6 @@ i:hover {
     font-family: var(--font-arcade);
     font-size: 1.2rem;
     transition: all 0.5s;
-    -webkit-text-stroke: 1px var(--blue-boolean);
 }
 
 #score span{
@@ -141,13 +140,15 @@ i:hover {
 }
 
 .win{
-    color: #00e165;
+    color: #0dd80c;
     -webkit-text-stroke: 1px var(--blue-boolean);
+    animation: tilt 0.8s ease-in-out infinite;
 }
 
 .lost{
     color: red;
     -webkit-text-stroke: 1px var(--blue-boolean);
+    animation: tilt 0.8s ease-in-out infinite;
 }
 
 .tilt {
