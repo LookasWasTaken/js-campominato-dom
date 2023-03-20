@@ -41,7 +41,7 @@ h1 {
 }
 
 .play,
-.reset {
+.reset{
     width: 85px;
     height: 40px;
     border-radius: 35px;
@@ -52,16 +52,28 @@ h1 {
     font-family: var(--font-game);
 }
 
+.again {
+    width: 150px;
+    height: 70px;
+    border-radius: 35px;
+    padding: 0 0.5rem;
+    transition: all 0.5s;
+    border-color: var(--blue-boolean);
+    font-size: 1.2rem;
+    font-family: var(--font-game);
+    color: white;
+    background-color: var(--blue-boolean);
+    margin-bottom: 2rem;
+}
+
 .reset {
     color: white;
     background-color: var(--blue-boolean);
 }
 
-.play:active {
-    scale: 1.2;
-}
-
-.reset:active {
+.play:active,
+.reset:active,
+.again:active {
     scale: 1.2;
 }
 
@@ -131,7 +143,7 @@ i:hover {
     transition: all 0.5s;
 }
 
-#score span{
+#score span {
     color: white;
     background-color: var(--blue-boolean);
     padding: 0.7rem;
@@ -139,13 +151,13 @@ i:hover {
     text-align: center;
 }
 
-.win{
+.win {
     color: #0dd80c;
     -webkit-text-stroke: 1px var(--blue-boolean);
     animation: tilt 0.8s ease-in-out infinite;
 }
 
-.lost{
+.lost {
     color: red;
     -webkit-text-stroke: 1px var(--blue-boolean);
     animation: tilt 0.8s ease-in-out infinite;
@@ -158,13 +170,15 @@ i:hover {
 @keyframes tilt {
     0% {
         transform: scale(1, 1);
-      }
-      50% {
+    }
+
+    50% {
         transform: scale(1.5, 1.5);
-      }
-      100% {
+    }
+
+    100% {
         transform: scale(1, 1);
-      }
+    }
 }
 
 .shadow {

@@ -43,6 +43,7 @@ play.addEventListener("click", function () {
   let getValue = select.selectedOptions[0].value;
   console.log("Ho premuto Play in modalità:", getValue);
   displayGrid(getValue);
+  scoreBoard.innerHTML = `your current score is <span></span>`;
   // Seleziono la length di tutte le .cell
   const numberCells = document.querySelectorAll(".cell").length;
   console.log(numberCells, "celle generate");
@@ -67,6 +68,10 @@ const reset = document.querySelector(".reset");
 reset.addEventListener("click", function () {
   defaultOption();
 });
+
+// Selezione il bottone di Refresh
+
+const again = document.getElementById("again")
 
 // Seleziono il futuro contenitore dei miei elementi dinamici
 
@@ -154,6 +159,7 @@ function createCell(cellNumber) {
         score.innerText = "";
         result.innerText = "YOU LOST!";
         result.classList.add("lost");
+        again.classList.toggle("d-none");
       } else if (bombFound != true) {
         cell.classList.add("bg");
         console.log("Numero Selezionato", cell.innerText);
@@ -163,6 +169,7 @@ function createCell(cellNumber) {
         if (score == cellNumber - 16) {
           result.innerText = "YOU WIN!";
           result.classList.add("win");
+          again.classList.toggle("d-none");
         }
       }
     });
